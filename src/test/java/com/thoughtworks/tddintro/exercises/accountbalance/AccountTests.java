@@ -3,22 +3,28 @@ package com.thoughtworks.tddintro.exercises.accountbalance;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.core.Is.is;
+
 public class AccountTests {
     @Test
-    @Ignore  // Remove each @Ignore and implement test
     public void shouldIncreaseMyBalanceWhenIDepositMoney(){
         Account account = new Account();
+        int newBalance = account.depositMoney();
+        assertThat(newBalance, is(150));
     }
 
     @Test
-    @Ignore  // Remove each @Ignore and implement test
     public void shouldDecreaseMyBalanceWhenIWithdrawMoney(){
-
+        Account account = new Account();
+        int newBalance = account.withdrawMoney();
+        assertThat(newBalance, is(50));
     }
 
     @Test
-    @Ignore  // Remove each @Ignore and implement test
     public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal(){
-
+        Account account = new Account();
+        int newBalance = account.withdrawMoney();
+        assertThat(newBalance, is(50));
     }
 }

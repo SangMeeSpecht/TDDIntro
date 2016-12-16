@@ -2,7 +2,7 @@ package com.thoughtworks.tddintro.exercises.accountbalance;
 
 public class Account {
 
-    int balance;
+    private int balance;
 
     public Account(int balance) {
         this.balance = balance;
@@ -13,11 +13,10 @@ public class Account {
     }
 
     public int withdrawMoney(int amount) {
-        if (amount == 50) {
-            return 50;
-        } else if (amount == 100) {
-            return 50;
+        if (balance - amount < 0) {
+            return balance;
         }
-        return 0;
+
+        return balance -= amount;
     }
 }
